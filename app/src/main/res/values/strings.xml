@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GradeTracker</string>
     <string name="logged_in">LOGGED_IN</string>
-    <string name="login_welcome">Welcome to the GradeTracker. Please Sign in.</string>
+    <string name="login_sign_in">Please Sign in.</string>
     <string name="view_grades">View Grades</string>
     <string name="track_assignment_status">Track Assignment Status</string>
     <string name="notification">Notification</string>
@@ -19,4 +19,8 @@
     <string name="create_account">Create Account</string>
     <string name="reenter_password">Re-enter Password</string>
     <string name="access_code">Access Code</string>
+    <string name="back_to_dashboard">Back to Dashboard</string>
+    <string name="welcome_message">Welcome to the GradeTracker.\nAre you a...</string>
+    <string name="teacher">Teacher</string>
+    <string name="student">Student</string>
 </resources>

@@ -23,10 +23,10 @@ public interface GradeDAO {
     void insert(Grade grade);
 
     @Query("SELECT * FROM " + GradeTrackerDatabase.GRADE_TABLE)
-    ArrayList<Grade> getAllRecords();
+    ArrayList<Grade> getAllGrades();
 
     @Query("SELECT * FROM " + GradeTrackerDatabase.GRADE_TABLE)
-    LiveData<List<Grade>> getAllLogsByUserId(int userId);
+    LiveData<List<Grade>> getAllGradesByUserId(int userId);
 
     @Query("SELECT * FROM " + GradeTrackerDatabase.GRADE_TABLE)
     List<Grade> getRecordsbyUserId(int loggedInUserId);

@@ -6,12 +6,17 @@
 
 package com.example.gradetracker.database.entities;
 
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import com.example.gradetracker.database.GradeTrackerDatabase;
 
 import java.util.Objects;
 
+@Entity(tableName = GradeTrackerDatabase.USER_TABLE)
 public class User {
     @PrimaryKey(autoGenerate = true)
+    private int userId;
     private String username;
     private String email;
     private String password;
@@ -28,12 +33,20 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return role == user.role && Objects.equals(username, user.username) && Objects.equals(email, user.email) && Objects.equals(password, user.password);
+        return userId == user.userId && role == user.role && Objects.equals(username, user.username) && Objects.equals(email, user.email) && Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, email, password, role);
+        return Objects.hash(userId, username, email, password, role);
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {

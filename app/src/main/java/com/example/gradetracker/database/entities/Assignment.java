@@ -6,10 +6,18 @@
 
 package com.example.gradetracker.database.entities;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import com.example.gradetracker.database.GradeTrackerDatabase;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity(tableName = GradeTrackerDatabase.ASSIGNMENT_TABLE)
 public class Assignment {
+    @PrimaryKey(autoGenerate = true)
+    private int assignmentId;
     private String title;
     private String description;
     private LocalDate dueDate;
@@ -27,12 +35,20 @@ public class Assignment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Assignment that = (Assignment) o;
-        return teacherId == that.teacherId && Objects.equals(title, that.title) && Objects.equals(description, that.description) && Objects.equals(dueDate, that.dueDate);
+        return assignmentId == that.assignmentId && teacherId == that.teacherId && Objects.equals(title, that.title) && Objects.equals(description, that.description) && Objects.equals(dueDate, that.dueDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, description, dueDate, teacherId);
+        return Objects.hash(assignmentId, title, description, dueDate, teacherId);
+    }
+
+    public int getAssignmentId() {
+        return assignmentId;
+    }
+
+    public void setAssignmentId(int assignmentId) {
+        this.assignmentId = assignmentId;
     }
 
     public String getTitle() {

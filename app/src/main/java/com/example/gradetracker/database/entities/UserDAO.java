@@ -32,6 +32,6 @@ public interface UserDAO {
     @Query("SELECT * from " + GradeTrackerDatabase.USER_TABLE + " WHERE username == :username" )
     LiveData<User> getUserByUserName(String username);
 
-    @Query("SELECT * from " + GradeTrackerDatabase.USER_TABLE + " WHERE id == :userId" )
+    @Query("SELECT * from " + GradeTrackerDatabase.USER_TABLE + " WHERE userId == :userId" )
     LiveData<User> getUserByUserId(int userId);
 }

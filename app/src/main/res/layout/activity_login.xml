@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
@@ -14,7 +14,7 @@
         android:layout_margin="16dip"
         android:layout_marginBottom="24dip"
         android:gravity="center"
-        android:text="@string/login_welcome"
+        android:text="@string/login_sign_in"
         android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,20 +35,6 @@
         app:layout_constraintTop_toBottomOf="@id/titleLoginTextView" />
 
     <EditText
-        android:id="@+id/emailLoginEditText"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_margin="16dp"
-        android:autofillHints="Please enter username"
-        android:gravity="center"
-        android:hint="@string/email"
-        android:inputType="text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userNameLoginEditText" />
-
-    <EditText
         android:id="@+id/passwordLoginEditText"
         android:layout_width="match_parent"
         android:layout_height="85dp"
@@ -60,7 +46,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailLoginEditText" />
+        app:layout_constraintTop_toBottomOf="@id/userNameLoginEditText" />
 
     <Button
         android:id="@+id/loginButton"

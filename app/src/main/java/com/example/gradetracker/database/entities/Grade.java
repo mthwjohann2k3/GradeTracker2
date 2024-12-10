@@ -11,12 +11,12 @@ import androidx.room.PrimaryKey;
 
 import com.example.gradetracker.database.GradeTrackerDatabase;
 
-import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Entity(tableName = GradeTrackerDatabase)
+@Entity(tableName = GradeTrackerDatabase.GRADE_TABLE)
 public class Grade {
     @PrimaryKey(autoGenerate = true)
+    private int gradeId;
     private int studentId;
     private int assignmentId;
     private double grade;
@@ -34,12 +34,20 @@ public class Grade {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Grade grade1 = (Grade) o;
-        return studentId == grade1.studentId && assignmentId == grade1.assignmentId && Double.compare(grade, grade1.grade) == 0 && Objects.equals(comments, grade1.comments);
+        return gradeId == grade1.gradeId && studentId == grade1.studentId && assignmentId == grade1.assignmentId && Double.compare(grade, grade1.grade) == 0 && Objects.equals(comments, grade1.comments);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(studentId, assignmentId, grade, comments);
+        return Objects.hash(gradeId, studentId, assignmentId, grade, comments);
+    }
+
+    public int getGradeId() {
+        return gradeId;
+    }
+
+    public void setGradeId(int gradeId) {
+        this.gradeId = gradeId;
     }
 
     public int getStudentId() {
