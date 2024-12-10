@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GradeTracker</string>
     <string name="logged_in">LOGGED_IN</string>
+    <string name="login_welcome">Welcome to the GradeTracker. Please Sign in.</string>
 </resources>

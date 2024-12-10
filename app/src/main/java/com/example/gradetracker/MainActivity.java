@@ -8,7 +8,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+//import com.example.gradetracker.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
+
+    //ActivityMainBinding binding;
+    public static final String TAG = "MSJ_GRADETRACKER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
