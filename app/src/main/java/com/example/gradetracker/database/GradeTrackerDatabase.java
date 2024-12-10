@@ -1,3 +1,9 @@
+/**
+ * @author Mathew S. Johann
+ * @date December 9, 2024
+ * @file GradeTrackerDatabase.java
+ */
+
 package com.example.gradetracker.database;
 
 import android.content.Context;

@@ -1,3 +1,9 @@
+/**
+ * @author Mathew S. Johann
+ * @date December 9, 2024
+ * @file LocalDateTypeConverter.java
+ */
+
 package com.example.gradetracker.database;
 
 import androidx.room.TypeConverter;

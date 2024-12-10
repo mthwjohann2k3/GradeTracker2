@@ -1,3 +1,9 @@
+/**
+ * @author Mathew S. Johann
+ * @date December 9, 2024
+ * @file GradeDAO.java (interface)
+ */
+
 package com.example.gradetracker.database.entities;
 
 import androidx.lifecycle.LiveData;

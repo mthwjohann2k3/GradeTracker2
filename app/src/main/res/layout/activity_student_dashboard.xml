@@ -11,24 +11,51 @@
         android:id="@+id/titleHelloStudentTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello Student!" />
+        android:layout_marginTop="250dp"
+        android:layout_marginHorizontal="20dp"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:text="@string/hello_student"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/titleHelloStudentTextView"
+        android:id="@+id/viewGradesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/view_grades" />
+        android:layout_marginTop="12dp"
+        android:text="@string/view_grades"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleHelloStudentTextView" />
 
     <Button
-        android:id="@+id/titleLoginTextView"
+        android:id="@+id/trackAssignmentStatusButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/track_assignment_status" />
+        android:layout_marginTop="4dp"
+        android:text="@string/track_assignment_status"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewGradesButton" />
+
 
     <Button
-        android:id="@+id/titleLoginTextView"
+        android:id="@+id/notificationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/notification" />
+        android:layout_marginTop="4dp"
+        android:text="@string/notification"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trackAssignmentStatusButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

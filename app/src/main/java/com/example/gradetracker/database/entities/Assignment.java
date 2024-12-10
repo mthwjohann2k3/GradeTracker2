@@ -1,3 +1,9 @@
+/**
+ * @author Mathew S. Johann
+ * @date December 9, 2024
+ * @file Assignment.java
+ */
+
 package com.example.gradetracker.database.entities;
 
 import java.time.LocalDate;

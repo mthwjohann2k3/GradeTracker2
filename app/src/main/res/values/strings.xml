@@ -9,4 +9,14 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="hello_student">Hello Student!</string>
+    <string name="hello_teacher">Hello Teacher!</string>
+    <string name="manage_assignment">Manage Assignment</string>
+    <string name="grade_submission">Grade Submission</string>
+    <string name="class_performance">Class Performance</string>
+    <string name="notify_students">Notify Students</string>
+    <string name="create_account_here">Create Account Here</string>
+    <string name="create_account">Create Account</string>
+    <string name="reenter_password">Re-enter Password</string>
+    <string name="access_code">Access Code</string>
 </resources>
