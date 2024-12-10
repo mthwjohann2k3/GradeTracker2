@@ -2,4 +2,11 @@
     <string name="app_name">GradeTracker</string>
     <string name="logged_in">LOGGED_IN</string>
     <string name="login_welcome">Welcome to the GradeTracker. Please Sign in.</string>
+    <string name="view_grades">View Grades</string>
+    <string name="track_assignment_status">Track Assignment Status</string>
+    <string name="notification">Notification</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 </resources>

@@ -35,9 +35,23 @@
         app:layout_constraintTop_toBottomOf="@id/titleLoginTextView" />
 
     <EditText
+        android:id="@+id/emailLoginEditText"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_margin="16dp"
+        android:autofillHints="Please enter username"
+        android:gravity="center"
+        android:hint="@string/email"
+        android:inputType="text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userNameLoginEditText" />
+
+    <EditText
         android:id="@+id/passwordLoginEditText"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="85dp"
         android:layout_margin="16dp"
         android:autofillHints="Please enter password"
         android:gravity="center"
@@ -46,7 +60,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userNameLoginEditText" />
+        app:layout_constraintTop_toBottomOf="@id/emailLoginEditText" />
 
     <Button
         android:id="@+id/loginButton"
