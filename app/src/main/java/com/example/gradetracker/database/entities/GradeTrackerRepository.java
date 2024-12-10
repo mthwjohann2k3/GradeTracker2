@@ -30,7 +30,8 @@ public class GradeTrackerRepository {
     public GradeTrackerRepository(Application application) {
         GradeTrackerDatabase db = GradeTrackerDatabase.getDatabase(application);
         this.gradeDAO = db.gradeDAO();
-        this.allGrades = (ArrayList<Grade>) this.gradeDAO.getAllRecords();
+        this.userDAO = db.userDAO();
+        this.allGrades = (ArrayList<Grade>) this.gradeDAO.getAllGrades();
     }
 
     public ArrayList<Grade> getAllGrades() {
@@ -38,7 +39,7 @@ public class GradeTrackerRepository {
                 new Callable<ArrayList<Grade>>() {
                     @Override
                     public ArrayList<Grade> call() throws Exception {
-                        return GradeDAO.getAllRecords();
+                        return GradeDAO.getAllGrades();
                     }
                 }
         );
@@ -77,13 +78,12 @@ public class GradeTrackerRepository {
         });
     }
 
-    /**
     public ArrayList<Grade> getAllGrades() {
         Future<ArrayList<Grade>> future = GradeTrackerDatabase.databaseWriteExecutor.submit(
                 new Callable<ArrayList<Grade>>() {
                     @Override
                     public ArrayList<Grade> call() throws Exception {
-                        return (ArrayList<Grade>) gradeDAO.getAllRecords();
+                        return (ArrayList<Grade>) gradeDAO.getAllGrades();
                     }
                 });
         try {
@@ -93,7 +93,6 @@ public class GradeTrackerRepository {
         }
         return null;
     }
-     */
 
     public void insertUser(User... user) {
         GradeTrackerDatabase.databaseWriteExecutor.execute(() ->

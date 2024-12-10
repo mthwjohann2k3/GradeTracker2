@@ -6,6 +6,46 @@
 
 package com.example.gradetracker;
 
-public class ManageAssignmentsActivity {
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.view.View;
 
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.example.gradetracker.database.entities.GradeTrackerRepository;
+
+public class ManageAssignmentsActivity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = com.example.gradetracker.databinding.ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        repository = GradeTrackerRepository.getRepository(getApplication());
+        loginUser(savedInstanceState);
+
+        //User is not logged in at this point, go to login screen
+        if (loggedInUserId == -1) {
+            Intent intent = LoginActivity.loginIntentFactory(getApplicationContext());
+            startActivity(intent);
+        }
+
+        updateSharedPreference();
+
+        binding.logDisplayTextView.setMovementMethod(new ScrollingMovementMethod());
+        //updateDisplay();
+        binding.logButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
 }

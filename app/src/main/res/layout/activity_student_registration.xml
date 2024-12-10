@@ -42,7 +42,7 @@
         android:autofillHints="Please enter username"
         android:gravity="center"
         android:hint="@string/email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

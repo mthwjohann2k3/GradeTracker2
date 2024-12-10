@@ -23,4 +23,16 @@
     <string name="welcome_message">Welcome to the GradeTracker.\nAre you a...</string>
     <string name="teacher">Teacher</string>
     <string name="student">Student</string>
+    <string name="enter_title">Enter title</string>
+    <string name="description">Description</string>
+    <string name="due_date">Due Date</string>
+    <string name="enter_due_date">Enter due date</string>
+    <string name="enter_description">Enter description</string>
+    <string name="title">Title</string>
+    <string name="add_assignment">Add Assignment</string>
+    <string name="student_id">Student ID</string>
+    <string name="grade">Grade</string>
+    <string name="enter_grade">Enter grade</string>
+    <string name="enter_student_id">Enter student ID</string>
+    <string name="post_grade">Post Grade</string>
 </resources>

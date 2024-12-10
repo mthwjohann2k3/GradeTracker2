@@ -6,6 +6,13 @@
 
 package com.example.gradetracker;
 
-public class ClassPerformance {
+import android.view.View;
 
+public class ClassPerformance {
+    binding.returnToDashboardButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //Go back to dashboard.
+        }
+    });
 }
