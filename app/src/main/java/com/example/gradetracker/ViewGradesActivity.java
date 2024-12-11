@@ -9,13 +9,15 @@ package com.example.gradetracker;
 import android.os.Bundle;
 import android.view.View;
 
-public class ViewGradesActivity {
-    private ViewGradesActivity binding;
+import androidx.appcompat.app.AppCompatActivity;
 
-    binding.returnToDashboardButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            //Go back to dashboard.
-        }
-    });
+import com.example.gradetracker.databinding.ActivityViewGradesBinding;
+
+public class ViewGradesActivity extends AppCompatActivity {
+    private ActivityViewGradesBinding binding;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 }

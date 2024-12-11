@@ -9,26 +9,27 @@ package com.example.gradetracker;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 
 import com.example.gradetracker.database.entities.GradeTrackerRepository;
 import com.example.gradetracker.database.entities.User;
-import com.example.gradetracker.databinding.ActivityLoginBinding;
+import com.example.gradetracker.databinding.ActivityStudentRegistrationBinding;
 
-public class StudentRegistrationActivity {
+public class StudentRegistrationActivity extends AppCompatActivity {
 
-    private ActivityLoginBinding binding;
-    private static GymLogRepository repository;
+    private ActivityStudentRegistrationBinding binding;
+    private GradeTrackerRepository repository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        binding = ActivityStudentRegistrationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         repository = GradeTrackerRepository.getRepository(getApplication());
 
-        binding.loginButton.setOnClickListener(new View.OnClickListener() {
+        binding.createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 verifyUser();
@@ -41,11 +42,11 @@ public class StudentRegistrationActivity {
         String username = binding.userNameCreateEditText.getText().toString();
         String email = binding.emailCreateEditText.getText().toString();
         String password = binding.passwordCreateEditText.getText().toString();
-        String reenterPassword = binding.reeenterPasswordCreateEditText.getText().toString();
+        String reenterPassword = binding.passwordReenterCreateEditText.getText().toString();
         String accessCode = binding.accessCodeCreateEditText.getText().toString();
 
         if (username.isEmpty()) {
-            toastMaker("username should not be blank");
+            //toastMaker("username should not be blank");
             return;
         }
     }

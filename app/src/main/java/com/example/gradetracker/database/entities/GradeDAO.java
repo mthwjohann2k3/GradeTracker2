@@ -14,7 +14,6 @@ import androidx.room.Query;
 
 import com.example.gradetracker.database.GradeTrackerDatabase;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -23,11 +22,11 @@ public interface GradeDAO {
     void insert(Grade grade);
 
     @Query("SELECT * FROM " + GradeTrackerDatabase.GRADE_TABLE)
-    ArrayList<Grade> getAllGrades();
+    List<Grade> getAllRecords();
 
-    @Query("SELECT * FROM " + GradeTrackerDatabase.GRADE_TABLE)
-    LiveData<List<Grade>> getAllGradesByUserId(int userId);
+    @Query("SELECT * FROM " + GradeTrackerDatabase.GRADE_TABLE + " WHERE :userId")
+    LiveData<List<Grade>> getAllLogsByUserId(int userId);
 
-    @Query("SELECT * FROM " + GradeTrackerDatabase.GRADE_TABLE)
+    @Query("SELECT * FROM " + GradeTrackerDatabase.GRADE_TABLE + " WHERE :loggedInUserId")
     List<Grade> getRecordsbyUserId(int loggedInUserId);
 }

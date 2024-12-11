@@ -11,16 +11,20 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.gradetracker.database.entities.GradeTrackerRepository;
+import com.example.gradetracker.databinding.ActivityTrackAssignmentBinding;
 
-public class TrackAssignmentActivity {
+public class TrackAssignmentActivity extends AppCompatActivity {
+    private ActivityTrackAssignmentBinding binding;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = com.example.gradetracker.databinding.ActivityMainBinding.inflate(getLayoutInflater());
+        binding = com.example.gradetracker.databinding.ActivityTrackAssignmentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

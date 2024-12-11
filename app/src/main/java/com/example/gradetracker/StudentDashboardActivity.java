@@ -8,18 +8,19 @@ package com.example.gradetracker;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import com.example.gradetracker.databinding.ActivityMainBinding;
+import com.example.gradetracker.databinding.ActivityStudentDashboardBinding;
 
-public class StudentDashboardActivity {
+public class StudentDashboardActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    private ActivityStudentDashboardBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = com.example.gradetracker.databinding.ActivityMainBinding.inflate(getLayoutInflater());
+        binding = com.example.gradetracker.databinding.ActivityStudentDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

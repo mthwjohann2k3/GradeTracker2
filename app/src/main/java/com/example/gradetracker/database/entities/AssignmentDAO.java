@@ -21,10 +21,10 @@ public interface AssignmentDAO {
     void insert(Assignment assignment);
 
     @Query("SELECT * FROM " + GradeTrackerDatabase.ASSIGNMENT_TABLE)
-    ArrayList<Assignment> getAllRecords();
+    ArrayList<Assignment> getAllAssignments();
 
     @Query("SELECT * FROM " + GradeTrackerDatabase.ASSIGNMENT_TABLE)
-    LiveData<List<Assignment>> getAllLogsByUserId(int userId);
+    LiveData<List<Assignment>> getAllAssignmentsByUserId(int userId);
 
     @Query("SELECT * FROM " + GradeTrackerDatabase.ASSIGNMENT_TABLE)
     List<Grade> getRecordsbyUserId(int loggedInUserId);

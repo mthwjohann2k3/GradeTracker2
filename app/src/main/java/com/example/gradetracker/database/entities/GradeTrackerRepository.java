@@ -31,7 +31,7 @@ public class GradeTrackerRepository {
         GradeTrackerDatabase db = GradeTrackerDatabase.getDatabase(application);
         this.gradeDAO = db.gradeDAO();
         this.userDAO = db.userDAO();
-        this.allGrades = (ArrayList<Grade>) this.gradeDAO.getAllGrades();
+        this.allGrades = (ArrayList<Grade>) this.gradeDAO.getAllRecords();
     }
 
     public ArrayList<Grade> getAllGrades() {
@@ -39,7 +39,7 @@ public class GradeTrackerRepository {
                 new Callable<ArrayList<Grade>>() {
                     @Override
                     public ArrayList<Grade> call() throws Exception {
-                        return GradeDAO.getAllGrades();
+                        return (ArrayList<Grade>) gradeDAO.getAllRecords();
                     }
                 }
         );
@@ -47,7 +47,7 @@ public class GradeTrackerRepository {
             return future.get();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
-            Log.i(MainActivity.TAG, "Problem when getting all GymLogs in the repository");
+            Log.i(MainActivity.TAG, "Problem when getting all Grades in the repository");
         }
         return null;
     }
@@ -76,22 +76,6 @@ public class GradeTrackerRepository {
         GradeTrackerDatabase.databaseWriteExecutor.execute(() -> {
             //GradeDAO.insert(grade);
         });
-    }
-
-    public ArrayList<Grade> getAllGrades() {
-        Future<ArrayList<Grade>> future = GradeTrackerDatabase.databaseWriteExecutor.submit(
-                new Callable<ArrayList<Grade>>() {
-                    @Override
-                    public ArrayList<Grade> call() throws Exception {
-                        return (ArrayList<Grade>) gradeDAO.getAllGrades();
-                    }
-                });
-        try {
-            return future.get();
-        } catch (InterruptedException | ExecutionException e) {
-            Log.i(MainActivity.TAG, "Problem when getting all GymLogs in the repository");
-        }
-        return null;
     }
 
     public void insertUser(User... user) {
