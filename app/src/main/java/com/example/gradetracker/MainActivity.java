@@ -56,21 +56,58 @@ public class MainActivity extends AppCompatActivity {
         repository = GradeTrackerRepository.getRepository(getApplication());
         loginUser(savedInstanceState);
 
-        //User is not logged in at this point, go to login screen
-        if (loggedInUserId == -1) {
-            Intent intent = LoginActivity.loginIntentFactory(getApplicationContext());
-            startActivity(intent);
-        }
+        binding.teacherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = LoginActivity.loginIntentFactory(getApplicationContext());
+                startActivity(intent);
+            }
+        });
+
+        binding.studentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MainActivity.this);
+                final AlertDialog alertDialog = alertBuilder.create();
+
+                alertBuilder.setMessage("Do you have an account?");
+
+                alertBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = LoginActivity.loginIntentFactory(getApplicationContext());
+                        startActivity(intent);
+                    }
+                });
+
+                alertBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = StudentRegistrationActivity.registrationIntentFactory(getApplicationContext());
+                        startActivity(intent);
+                    }
+                });
+
+                alertBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog.dismiss();
+                    }
+                });
+
+                alertBuilder.create().show();
+            }
+        });
 
         updateSharedPreference();
     }
 
     private void loginUser(Bundle savedInstanceState) {
         //check shared preference for logged in user
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.preference_userId_key),
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.username),
                 Context.MODE_PRIVATE);
 
-        loggedInUserId = sharedPreferences.getInt(getString(R.string.preference_userId_key), LOGGED_OUT);
+        loggedInUserId = sharedPreferences.getInt(getString(R.string.username), LOGGED_OUT);
 
         if (loggedInUserId == LOGGED_OUT & savedInstanceState != null && savedInstanceState.containsKey(SAVED_INSTANCE_STATE_USERID_KEY)) {
             loggedInUserId = savedInstanceState.getInt(SAVED_INSTANCE_STATE_USERID_KEY, LOGGED_OUT);
@@ -156,10 +193,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateSharedPreference() {
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.preference_file_key),
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.username),
                 Context.MODE_PRIVATE);
         SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
-        sharedPrefEditor.putInt(getString(R.string.preference_userId_key), loggedInUserId);
+        sharedPrefEditor.putInt(getString(R.string.username), loggedInUserId);
         sharedPrefEditor.apply();
     }
 

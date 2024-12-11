@@ -6,6 +6,8 @@
 
 package com.example.gradetracker;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -49,5 +51,9 @@ public class StudentRegistrationActivity extends AppCompatActivity {
             //toastMaker("username should not be blank");
             return;
         }
+    }
+
+    static Intent registrationIntentFactory(Context context) {
+        return new Intent(context, StudentRegistrationActivity.class);
     }
 }
