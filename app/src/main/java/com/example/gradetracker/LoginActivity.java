@@ -1,6 +1,6 @@
 /**
  * @author Mathew S. Johann
- * @date December 9, 2024
+ * @date December 12, 2024
  * @file LoginActivity.java
  */
 
@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.LiveData;
 
 import com.example.gradetracker.database.GradeTrackerDatabase;
@@ -25,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
 
     private GradeTrackerRepository repository;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +74,7 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    static Intent loginIntentFactory(Context context) {
+    public static Intent loginIntentFactory(Context context) {
         return new Intent(context, LoginActivity.class);
     }
-
-
 }

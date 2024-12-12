@@ -1,6 +1,6 @@
 /**
  * @author Mathew S. Johann
- * @date December 9, 2024
+ * @date December 12, 2024
  * @file GradeTrackerRepository.java
  */
 
@@ -22,6 +22,7 @@ import java.util.concurrent.Future;
 
 @Entity
 public class GradeTrackerRepository {
+    private final AssignmentDAO assignmentDAO;
     private final GradeDAO gradeDAO;
     private final UserDAO userDAO;
     private ArrayList<Grade> allGrades;
@@ -29,6 +30,7 @@ public class GradeTrackerRepository {
 
     public GradeTrackerRepository(Application application) {
         GradeTrackerDatabase db = GradeTrackerDatabase.getDatabase(application);
+        this.assignmentDAO = db.assignmentDAO();
         this.gradeDAO = db.gradeDAO();
         this.userDAO = db.userDAO();
         this.allGrades = (ArrayList<Grade>) this.gradeDAO.getAllRecords();
@@ -72,9 +74,15 @@ public class GradeTrackerRepository {
         return null;
     }
 
+    public void insertAssignment(Assignment assignment) {
+        GradeTrackerDatabase.databaseWriteExecutor.execute(() -> {
+            assignmentDAO.insert(assignment);
+        });
+    }
+
     public void insertGrade(Grade grade) {
         GradeTrackerDatabase.databaseWriteExecutor.execute(() -> {
-            //GradeDAO.insert(grade);
+            gradeDAO.insert(grade);
         });
     }
 
@@ -93,7 +101,7 @@ public class GradeTrackerRepository {
         return userDAO.getUserByUserId(userId);
     }
 
-    public ArrayList<Grade> getAllLogsByUserId(int loggedInUserId) {
+    public ArrayList<Grade> getAllAssignmentsByUserId(int loggedInUserId) {
         Future<ArrayList<Grade>> future = GradeTrackerDatabase.databaseWriteExecutor.submit(
                 new Callable<ArrayList<Grade>>() {
                     @Override

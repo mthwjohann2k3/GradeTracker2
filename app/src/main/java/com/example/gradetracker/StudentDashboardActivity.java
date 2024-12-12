@@ -1,11 +1,13 @@
 /**
  * @author Mathew S. Johann
- * @date December 9, 2024
+ * @date December 12, 2024
  * @file StudentDashboardActivity.java
  */
 
 package com.example.gradetracker;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,5 +29,9 @@ public class StudentDashboardActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    static Intent studentDashboardIntentFactory(Context context) {
+        return new Intent(context, StudentDashboardActivity.class);
     }
 }

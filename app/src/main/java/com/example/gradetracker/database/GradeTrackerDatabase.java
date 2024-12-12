@@ -1,6 +1,6 @@
 /**
  * @author Mathew S. Johann
- * @date December 9, 2024
+ * @date December 12, 2024
  * @file GradeTrackerDatabase.java
  */
 
@@ -17,6 +17,8 @@ import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.gradetracker.MainActivity;
+import com.example.gradetracker.database.entities.Assignment;
+import com.example.gradetracker.database.entities.AssignmentDAO;
 import com.example.gradetracker.database.entities.Grade;
 import com.example.gradetracker.database.entities.GradeDAO;
 import com.example.gradetracker.database.entities.User;
@@ -26,7 +28,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @TypeConverters(LocalDateTypeConverter.class)
-@Database(entities = {Grade.class, User.class}, version = 1, exportSchema = false)
+@Database(entities = {Assignment.class, Grade.class, User.class}, version = 1, exportSchema = false)
 public abstract class GradeTrackerDatabase extends RoomDatabase {
 
     public static final String USER_TABLE = "usertable";
@@ -72,6 +74,7 @@ public abstract class GradeTrackerDatabase extends RoomDatabase {
             });
         }
     };
+    public abstract AssignmentDAO assignmentDAO();
 
     public abstract GradeDAO gradeDAO();
 

@@ -1,6 +1,6 @@
 /**
  * @author Mathew S. Johann
- * @date December 9, 2024
+ * @date December 12, 2024
  * @file Assignment.java
  */
 
@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey;
 
 import com.example.gradetracker.database.GradeTrackerDatabase;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity(tableName = GradeTrackerDatabase.ASSIGNMENT_TABLE)
@@ -20,10 +20,10 @@ public class Assignment {
     private int assignmentId;
     private String title;
     private String description;
-    private LocalDate dueDate;
+    private LocalDateTime dueDate;
     private int teacherId;
 
-    public Assignment(String title, String description, LocalDate dueDate, int teacherId) {
+    public Assignment(String title, String description, LocalDateTime dueDate, int teacherId) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
@@ -67,11 +67,11 @@ public class Assignment {
         this.description = description;
     }
 
-    public LocalDate getDueDate() {
+    public LocalDateTime getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDate dueDate) {
+    public void setDueDate(LocalDateTime dueDate) {
         this.dueDate = dueDate;
     }
 

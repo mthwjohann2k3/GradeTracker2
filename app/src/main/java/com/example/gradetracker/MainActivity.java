@@ -1,6 +1,6 @@
 /**
  * @author Mathew S. Johann
- * @date December 9, 2024
+ * @date December 12, 2024
  * @file MainActivity.java
  */
 
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
         sharedPrefEditor.apply();
     }
 
-    static Intent mainActivityIntentFactory(Context context, int userId) {
+    public static Intent mainActivityIntentFactory(Context context, int userId) {
         Intent intent = new Intent(context, MainActivity.class);
         intent.putExtra(MAIN_ACTIVITY_USER_ID, userId);
         return intent;
