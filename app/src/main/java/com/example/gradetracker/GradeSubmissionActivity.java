@@ -8,8 +8,10 @@ package com.example.gradetracker;
 
 import static com.example.gradetracker.database.GradeTrackerDatabase.databaseWriteExecutor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,5 +26,13 @@ public class GradeSubmissionActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding.returnToDashboardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Go back to dashboard.
+                Intent intent = new Intent(TeacherDashboardActivity.teacherDashboardIntentFactory(getApplicationContext()));
+                startActivity(intent);
+            }
+        });
     }
 }

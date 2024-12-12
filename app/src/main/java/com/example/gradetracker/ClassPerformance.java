@@ -8,6 +8,7 @@ package com.example.gradetracker;
 
 import static com.example.gradetracker.database.GradeTrackerDatabase.databaseWriteExecutor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -26,6 +27,8 @@ public class ClassPerformance extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Go back to dashboard.
+                Intent intent = new Intent(TeacherDashboardActivity.teacherDashboardIntentFactory(getApplicationContext()));
+                startActivity(intent);
             }
         });
     }
