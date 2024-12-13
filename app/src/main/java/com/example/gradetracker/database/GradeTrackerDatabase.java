@@ -28,7 +28,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @TypeConverters(LocalDateTypeConverter.class)
-@Database(entities = {Assignment.class, Grade.class, User.class}, version = 1, exportSchema = false)
+@Database(entities = {Assignment.class, Grade.class, User.class}, version = 2, exportSchema = false)
 public abstract class GradeTrackerDatabase extends RoomDatabase {
 
     public static final String USER_TABLE = "usertable";

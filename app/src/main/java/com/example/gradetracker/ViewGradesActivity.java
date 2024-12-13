@@ -35,6 +35,6 @@ public class ViewGradesActivity extends AppCompatActivity {
     }
 
     static Intent viewGradesIntentFactory(Context context) {
-        return new Intent(context, StudentDashboardActivity.class);
+        return new Intent(context, ViewGradesActivity.class);
     }
 }

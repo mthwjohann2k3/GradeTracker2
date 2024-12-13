@@ -38,6 +38,12 @@ public class StudentRegistrationActivity extends AppCompatActivity {
                 addUser();
             }
         });
+        binding.returnToHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(MainActivity.mainActivityIntentFactory(getApplicationContext()));
+            }
+        });
     }
 
     private void addUser() {

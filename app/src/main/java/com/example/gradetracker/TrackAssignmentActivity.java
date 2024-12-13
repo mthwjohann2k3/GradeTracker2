@@ -43,6 +43,6 @@ public class TrackAssignmentActivity extends AppCompatActivity {
     }
 
     static Intent trackAssignmentIntentFactory(Context context) {
-        return new Intent(context, StudentDashboardActivity.class);
+        return new Intent(context, TrackAssignmentActivity.class);
     }
 }

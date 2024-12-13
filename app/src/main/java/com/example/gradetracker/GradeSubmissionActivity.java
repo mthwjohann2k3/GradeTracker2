@@ -8,6 +8,7 @@ package com.example.gradetracker;
 
 import static com.example.gradetracker.database.GradeTrackerDatabase.databaseWriteExecutor;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,5 +38,9 @@ public class GradeSubmissionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    static Intent gradeSubmissionIntentFactory(Context context) {
+        return new Intent(context, GradeSubmissionActivity.class);
     }
 }

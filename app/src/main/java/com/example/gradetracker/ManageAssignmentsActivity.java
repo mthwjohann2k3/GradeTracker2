@@ -95,4 +95,9 @@ public class ManageAssignmentsActivity extends AppCompatActivity {
             Log.d(MainActivity.TAG, "Error reading value from reps edit text.");
         }
     }
+
+    public static Intent manageAssignmentsIntentFactory(Context context) {
+        Intent intent = new Intent(context, ManageAssignmentsActivity.class);
+        return intent;
+    }
 }

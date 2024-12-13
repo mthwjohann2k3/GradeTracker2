@@ -93,12 +93,23 @@
     <Button
         android:id="@+id/createAccountButton"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
-        android:layout_margin="16dp"
+        android:layout_height="90dp"
+        android:layout_margin="4dp"
         android:text="@string/create_account"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/accessCodeCreateEditText" />
+
+    <Button
+        android:id="@+id/returnToHomeButton"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_margin="4dp"
+        android:text="@string/back"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createAccountButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
