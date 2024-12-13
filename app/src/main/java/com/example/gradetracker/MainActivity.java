@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int loggedInUserId = -1;
     private User user;
+    //declare users
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
