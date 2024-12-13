@@ -13,6 +13,7 @@ import com.example.gradetracker.database.GradeTrackerDatabase;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+//add objects
 
 @Entity(tableName = GradeTrackerDatabase.ASSIGNMENT_TABLE)
 public class Assignment {
