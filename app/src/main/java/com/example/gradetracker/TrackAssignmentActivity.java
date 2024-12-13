@@ -6,6 +6,7 @@
 
 package com.example.gradetracker;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -21,6 +22,7 @@ import com.example.gradetracker.databinding.ActivityTrackAssignmentBinding;
 
 public class TrackAssignmentActivity extends AppCompatActivity {
     private ActivityTrackAssignmentBinding binding;
+    private GradeTrackerRepository repository;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +33,16 @@ public class TrackAssignmentActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        repository = GradeTrackerRepository.getRepository(getApplication());
         binding.returnToDashboardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //return to dashboard
+                startActivity(StudentDashboardActivity.studentDashboardIntentFactory(getApplicationContext()));
             }
         });
+    }
+
+    static Intent trackAssignmentIntentFactory(Context context) {
+        return new Intent(context, StudentDashboardActivity.class);
     }
 }

@@ -200,9 +200,8 @@ public class MainActivity extends AppCompatActivity {
         sharedPrefEditor.apply();
     }
 
-    public static Intent mainActivityIntentFactory(Context context, int userId) {
+    public static Intent mainActivityIntentFactory(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
-        intent.putExtra(MAIN_ACTIVITY_USER_ID, userId);
         return intent;
     }
 }

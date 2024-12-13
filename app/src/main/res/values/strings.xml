@@ -35,4 +35,6 @@
     <string name="enter_grade">Enter grade</string>
     <string name="enter_student_id">Enter student ID</string>
     <string name="post_grade">Post Grade</string>
+    <string name="back">Back</string>
+    <string name="log_out">Log Out</string>
 </resources>

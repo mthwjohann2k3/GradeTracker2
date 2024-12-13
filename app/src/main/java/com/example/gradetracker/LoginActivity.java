@@ -43,6 +43,12 @@ public class LoginActivity extends AppCompatActivity {
                 verifyUser();
             }
         });
+        binding.returnToHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(MainActivity.mainActivityIntentFactory(getApplicationContext()));
+            }
+        });
     }
 
     private void verifyUser() {
@@ -58,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
             if (user != null) {
                 String password = binding.passwordLoginEditText.getText().toString();
                 if (password.equals(user.getPassword())) {
-                    startActivity(MainActivity.mainActivityIntentFactory(getApplicationContext(), user.getUserId()));
+                    startActivity(TeacherDashboardActivity.teacherDashboardIntentFactory(getApplicationContext()));
                 } else {
                     toastMaker("Invalid password");
                     binding.passwordLoginEditText.setSelection(0);

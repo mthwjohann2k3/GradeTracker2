@@ -34,7 +34,7 @@ public class StudentRegistrationActivity extends AppCompatActivity {
 
         binding.createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 addUser();
             }
         });
@@ -72,6 +72,7 @@ public class StudentRegistrationActivity extends AppCompatActivity {
             toastMaker("please enter an access code");
             return;
         }
+
         startActivity(StudentDashboardActivity.studentDashboardIntentFactory(getApplicationContext()));
     }
 
